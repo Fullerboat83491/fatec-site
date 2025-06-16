@@ -4,225 +4,249 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disciplinas FATEC Araçatuba - ADS</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
+            font-family: 'Inter', sans-serif; /* Usando a fonte Inter */
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
+        /* Custom colors for Tailwind to match the original theme closely */
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue Gray */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --light-color: #ecf0f1; /* Light Gray */
+            --dark-color: #2c3e50; /* Dark Blue Gray */
+            --text-color: #333; /* Dark Gray for text */
         }
-        
-        .container {
-            width: 85%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 2rem;
-        }
-        
-        h3 {
-            color: var(--secondary-color);
-            margin-top: 1.5rem;
-        }
-        
-        .discipline-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .methodology-section {
-            background-color: var(--light-color);
-            padding: 1rem;
-            border-radius: 5px;
-            margin: 1rem 0;
-        }
-        
-        ul {
-            padding-left: 1.5rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .highlight {
-            background-color: #fffde7;
-            padding: 0.2rem 0.4rem;
-            border-left: 3px solid var(--accent-color);
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+        /* Extend Tailwind's theme with custom colors if needed */
+        .tailwind-colors {
+            --tw-primary-color: var(--primary-color);
+            --tw-secondary-color: var(--secondary-color);
+            --tw-accent-color: var(--accent-color);
+            --tw-light-color: var(--light-color);
+            --tw-dark-color: var(--dark-color);
+            --tw-text-color: var(--text-color);
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Aprenda, Conquiste, Evolua</h1>
-            <p>Sua jornada começa aqui!</p>
-            <img src="fatec azul.png" width="200">
+<body class="bg-gray-100 text-gray-800 antialiased leading-relaxed">
+    <header class="bg-gradient-to-r from-gray-800 to-blue-600 text-white py-12 text-center shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-3 rounded-lg p-2 inline-block bg-white bg-opacity-10 shadow-md">Aprenda, Conquiste, Evolua</h1>
+            <p class="text-xl md:text-2xl font-light mb-6">Sua jornada começa aqui!</p>
+            <!-- Substituí a imagem local por um placeholder mais genérico -->
+            <img src="https://placehold.co/200x80/2c3e50/ffffff?text=FATEC+Logo" alt="Logo da FATEC" class="mx-auto rounded-lg shadow-md">
         </div>
     </header>
-    
-    <main class="container">
-        <section class="discipline-card">
-            <h2>Comunicação e Expressão</h2>
-            <p>A disciplina de Comunicação e Expressão no curso de Análise e Desenvolvimento de Sistemas da FATEC tem como objetivo principal desenvolver habilidades de leitura, escrita, interpretação de textos e expressão oral e escrita dos estudantes.</p>
-            
-            <div class="methodology-section">
-                <h3>Metodologia da Disciplina</h3>
-                <p>As primeiras aulas da disciplina abordam temas fundamentais sobre linguagem, comunicação e interação, destacando sua relevância no contexto educacional e social.</p>
-                
-                <h4>Abordagem Teórico-Prática</h4>
-                <ul>
+
+    <!-- Navigation Buttons -->
+    <nav class="bg-white shadow-md py-4 mb-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+            <button id="btnComunicacao" class="px-6 py-3 rounded-full text-lg font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transition duration-300 ease-in-out shadow-md">
+                Comunicação e Expressão
+            </button>
+            <button id="btnCalculo" class="px-6 py-3 rounded-full text-lg font-semibold bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75 transition duration-300 ease-in-out shadow-md">
+                Cálculo
+            </button>
+            <button id="btnLogica" class="px-6 py-3 rounded-full text-lg font-semibold bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75 transition duration-300 ease-in-out shadow-md">
+                Lógica de Programação
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Seção: Comunicação e Expressão -->
+        <section id="comunicacao-expressao" class="discipline-section bg-white rounded-xl shadow-lg p-6 mb-8 transition-all duration-300 hover:shadow-xl">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-500 flex items-center">
+                <!-- Icone de Livro (Lucide Icons) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-text mr-3 text-blue-500"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/><path d="M8 11h8"/><path d="M8 15h8"/></svg>
+                Comunicação e Expressão
+            </h2>
+            <p class="text-lg mb-6 leading-relaxed">A disciplina de Comunicação e Expressão no curso de Análise e Desenvolvimento de Sistemas da FATEC tem como objetivo principal desenvolver habilidades de leitura, escrita, interpretação de textos e expressão oral e escrita dos estudantes.</p>
+
+            <div class="bg-blue-50 rounded-lg p-6 my-6 border-l-4 border-blue-400 shadow-inner">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <!-- Icone de Metodologia (Lucide Icons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb mr-2 text-blue-600"><path d="M15 14c.2-.84.5-1.54.9-2.2l4.6-7.7A2 2 0 0 0 17.46 2H6.54l-.72 1.21A2 2 0 0 0 4 5v.4L2.3 8.3c-.4.66-.7 1.36-.9 2.2C1.2 11.77 1 12.38 1 13c0 2.92 1.86 5.35 4.58 6.5C8.82 20.81 12.12 21 15 20c.4-.95.7-1.95.9-3h-4.2C9.57 17 9 17.57 9 18.25V20c.4-.95.7-1.95.9-3H15c.4-.95.7-1.95.9-3h-4.2c-.4.66-.7 1.36-.9 2.2C9.72 18.8 9.3 19.78 9 20c2.88 1 6.18.81 9.42-.35C22.14 18.35 24 15.92 24 13c0-.62-.2-1.23-.5-1.8z"/></svg>
+                    Metodologia da Disciplina
+                </h3>
+                <p class="mb-4">As primeiras aulas da disciplina abordam temas fundamentais sobre linguagem, comunicação e interação, destacando sua relevância no contexto educacional e social.</p>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Abordagem Teórico-Prática</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li><strong>Aulas expositivas:</strong> Discussão de conceitos como tipos de texto, coesão, coerência, argumentação e estrutura textual.</li>
                     <li><strong>Análise de textos:</strong> Leitura e interpretação de diferentes gêneros (acadêmicos, jornalísticos, literários, etc.).</li>
                 </ul>
-                
-                <h4>Produção Textual</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Produção Textual</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li><strong>Redação de textos:</strong> Elaboração de resumos, resenhas, artigos, relatórios e ensaios.</li>
                     <li><strong>Revisão e feedback:</strong> Correção orientada pelo professor, com foco em clareza, gramática e estilo.</li>
                 </ul>
-                
-                <h4>Desenvolvimento da Oralidade</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Desenvolvimento da Oralidade</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li><strong>Apresentações orais:</strong> Seminários, debates e discussões em grupo para aprimorar a expressão verbal.</li>
                     <li><strong>Técnicas de oratória:</strong> Postura, dicção e uso de recursos audiovisuais.</li>
                 </ul>
-                
-                <h4>Avaliação Contínua</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Avaliação Contínua</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Participação em aula: Engajamento em discussões e atividades.</li>
                     <li>Trabalhos individuais e em grupo: Produção textual, seminários e projetos.</li>
                     <li>Provas escritas: Testes de interpretação e produção de texto.</li>
                 </ul>
-                
-                <p class="highlight">Essa metodologia busca não só melhorar a escrita e a fala, mas também desenvolver pensamento crítico e capacidade argumentativa, fundamentais em qualquer área de atuação.</p>
+
+                <p class="bg-yellow-50 rounded-md px-4 py-3 border-l-4 border-red-400 text-red-800 font-medium shadow-sm">
+                    Essa metodologia busca não só melhorar a escrita e a fala, mas também desenvolver pensamento crítico e capacidade argumentativa, fundamentais em qualquer área de atuação.
+                </p>
             </div>
         </section>
-        
-        <section class="discipline-card">
-            <h2>Cálculo</h2>
-            <p>A disciplina de Cálculo no curso de Análise e Desenvolvimento de Sistemas (ADS) da FATEC Araçatuba tem uma metodologia focada em aplicações práticas para computação, combinando teoria matemática com resolução de problemas relevantes para a área de tecnologia.</p>
-            
-            <div class="methodology-section">
-                <h3>Metodologia de Ensino</h3>
-                
-                <h4>Aulas Teóricas e Expositivas</h4>
-                <p>Apresentação dos conceitos fundamentais de cálculo diferencial e integral, incluindo:</p>
-                <ul>
+
+        <!-- Seção: Cálculo -->
+        <section id="calculo" class="discipline-section hidden bg-white rounded-xl shadow-lg p-6 mb-8 transition-all duration-300 hover:shadow-xl">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-500 flex items-center">
+                <!-- Icone de Calculadora (Lucide Icons) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator mr-3 text-blue-500"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M8 10h8"/><path d="M8 14h8"/><path d="M8 18h8"/></svg>
+                Cálculo
+            </h2>
+            <p class="text-lg mb-6 leading-relaxed">A disciplina de Cálculo no curso de Análise e Desenvolvimento de Sistemas (ADS) da FATEC Araçatuba tem uma metodologia focada em aplicações práticas para computação, combinando teoria matemática com resolução de problemas relevantes para a área de tecnologia.</p>
+
+            <div class="bg-blue-50 rounded-lg p-6 my-6 border-l-4 border-blue-400 shadow-inner">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <!-- Icone de Metodologia (Lucide Icons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb mr-2 text-blue-600"><path d="M15 14c.2-.84.5-1.54.9-2.2l4.6-7.7A2 2 0 0 0 17.46 2H6.54l-.72 1.21A2 2 0 0 0 4 5v.4L2.3 8.3c-.4.66-.7 1.36-.9 2.2C1.2 11.77 1 12.38 1 13c0 2.92 1.86 5.35 4.58 6.5C8.82 20.81 12.12 21 15 20c.4-.95.7-1.95.9-3h-4.2C9.57 17 9 17.57 9 18.25V20c.4-.95.7-1.95.9-3H15c.4-.95.7-1.95.9-3h-4.2c-.4.66-.7 1.36-.9 2.2C9.72 18.8 9.3 19.78 9 20c2.88 1 6.18.81 9.42-.35C22.14 18.35 24 15.92 24 13c0-.62-.2-1.23-.5-1.8z"/></svg>
+                    Metodologia de Ensino
+                </h3>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Aulas Teóricas e Expositivas</h4>
+                <p class="mb-4">Apresentação dos conceitos fundamentais de cálculo diferencial e integral, incluindo:</p>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Limites e continuidade</li>
                     <li>Derivadas e suas aplicações (taxas de variação, otimização)</li>
                     <li>Integrais (cálculo de áreas, volumes, aplicações em probabilidade e processamento de dados)</li>
                 </ul>
-                
-                <h4>Resolução de Problemas e Exercícios</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Resolução de Problemas e Exercícios</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Listas de exercícios com enfoque em situações reais de TI.</li>
                 </ul>
-                
-                <h4>Avaliação</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Avaliação</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Provas escritas com problemas teóricos e aplicados.</li>
                     <li>Trabalhos práticos envolvendo matemática.</li>
                     <li>Participação em aulas e resolução de exercícios.</li>
                 </ul>
-                
-                <p class="highlight">O cálculo não é tratado como uma disciplina puramente teórica, mas sim como uma ferramenta para análise de dados, inteligência artificial e computação gráfica, alinhando-se às demandas do mercado de TI.</p>
+
+                <p class="bg-yellow-50 rounded-md px-4 py-3 border-l-4 border-red-400 text-red-800 font-medium shadow-sm">
+                    O cálculo não é tratado como uma disciplina puramente teórica, mas sim como uma ferramenta para análise de dados, inteligência artificial e computação gráfica, alinhando-se às demandas do mercado de TI.
+                </p>
             </div>
         </section>
-        
-        <section class="discipline-card">
-            <h2>Lógica de Programação</h2>
-            <p>A disciplina de Lógica de Programação no curso de Análise e Desenvolvimento de Sistemas (ADS) da FATEC Araçatuba segue uma metodologia prática e aplicada, com foco no desenvolvimento do raciocínio lógico e na construção de algoritmos, preparando os alunos para programação em linguagens como C ou Java.</p>
-            
-            <div class="methodology-section">
-                <h3>Metodologia de Ensino</h3>
-                
-                <h4>Abordagem Teórico-Prática</h4>
-                <ul>
+
+        <!-- Seção: Lógica de Programação -->
+        <section id="logica-programacao" class="discipline-section hidden bg-white rounded-xl shadow-lg p-6 mb-8 transition-all duration-300 hover:shadow-xl">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4 pb-2 border-b-2 border-blue-500 flex items-center">
+                <!-- Icone de Código (Lucide Icons) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2 mr-3 text-blue-500"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                Lógica de Programação
+            </h2>
+            <p class="text-lg mb-6 leading-relaxed">A disciplina de Lógica de Programação no curso de Análise e Desenvolvimento de Sistemas (ADS) da FATEC Araçatuba segue uma metodologia prática e aplicada, com foco no desenvolvimento do raciocínio lógico e na construção de algoritmos, preparando os alunos para programação em linguagens como C ou Java.</p>
+
+            <div class="bg-blue-50 rounded-lg p-6 my-6 border-l-4 border-blue-400 shadow-inner">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <!-- Icone de Metodologia (Lucide Icons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lightbulb mr-2 text-blue-600"><path d="M15 14c.2-.84.5-1.54.9-2.2l4.6-7.7A2 2 0 0 0 17.46 2H6.54l-.72 1.21A2 2 0 0 0 4 5v.4L2.3 8.3c-.4.66-.7 1.36-.9 2.2C1.2 11.77 1 12.38 1 13c0 2.92 1.86 5.35 4.58 6.5C8.82 20.81 12.12 21 15 20c.4-.95.7-1.95.9-3h-4.2C9.57 17 9 17.57 9 18.25V20c.4-.95.7-1.95.9-3H15c.4-.95.7-1.95.9-3h-4.2c-.4.66-.7 1.36-.9 2.2C9.72 18.8 9.3 19.78 9 20c2.88 1 6.18.81 9.42-.35C22.14 18.35 24 15.92 24 13c0-.62-.2-1.23-.5-1.8z"/></svg>
+                    Metodologia de Ensino
+                </h3>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Abordagem Teórico-Prática</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li><strong>Fundamentos da Lógica:</strong> Conceitos de algoritmos, variáveis, operadores, estruturas condicionais (if-else), laços de repetição (for, while).</li>
                     <li><strong>Introdução a pseudocódigo (Portugol)</strong> e fluxogramas para modelagem de soluções.</li>
                     <li><strong>Princípios de Programação Estruturada:</strong> Modularização, funções, passagem de parâmetros.</li>
                 </ul>
-                
-                <h4>Aprendizado Baseado em Problemas</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Aprendizado Baseado em Problemas</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Resolução de exercícios progressivos, desde problemas simples (cálculos matemáticos) até desafios mais complexos (estruturas de dados básicas, como vetores e matrizes).</li>
                     <li><strong>Projetos práticos:</strong> Desenvolvimento de pequenos programas que simulam situações reais (ex.: sistemas de cadastro, cálculos de média, jogos simples).</li>
                 </ul>
-                
-                <h4>Ferramentas e Linguagens Utilizadas</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Ferramentas e Linguagens Utilizadas</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li><strong>Ambientes de Desenvolvimento:</strong> Portugol Studio (para pseudocódigo). IDE's como Visual Studio Code, PyCharm ou Dev C++ (dependendo da linguagem adotada).</li>
                     <li><strong>Linguagens de Programação:</strong> Geralmente C#</li>
                 </ul>
-                
-                <h4>Avaliação</h4>
-                <ul>
+
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Avaliação</h4>
+                <ul class="list-disc list-inside space-y-1 mb-4">
                     <li>Listas de exercícios (implementação de algoritmos).</li>
                     <li>Provas práticas e teóricas (testes escritos e desenvolvimento de código).</li>
                     <li>Projetos individuais ou em grupo (ex.: criar um programa que valide CPF).</li>
                 </ul>
-                
-                <p class="highlight">Ênfase na aplicação real, conectando lógica de programação com demandas do mercado de TI.</p>
+
+                <p class="bg-yellow-50 rounded-md px-4 py-3 border-l-4 border-red-400 text-red-800 font-medium shadow-sm">
+                    Ênfase na aplicação real, conectando lógica de programação com demandas do mercado de TI.
+                </p>
             </div>
         </section>
     </main>
-    
-    <footer>
-        <div class="container">
-            <p>FATEC Araçatuba - Análise e Desenvolvimento de Sistemas</p>
+
+    <footer class="bg-gray-800 text-white py-6 text-center shadow-inner">
+        <div class="container mx-auto px-4">
+            <p class="text-md">&copy; 2025 FATEC Araçatuba - Análise e Desenvolvimento de Sistemas. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = {
+                comunicacao: document.getElementById('comunicacao-expressao'),
+                calculo: document.getElementById('calculo'),
+                logica: document.getElementById('logica-programacao')
+            };
+
+            const buttons = {
+                btnComunicacao: document.getElementById('btnComunicacao'),
+                btnCalculo: document.getElementById('btnCalculo'),
+                btnLogica: document.getElementById('btnLogica')
+            };
+
+            // Function to show a specific section and update active button
+            function showSection(sectionId) {
+                // Hide all sections
+                for (const key in sections) {
+                    sections[key].classList.add('hidden');
+                }
+                // Show the selected section
+                sections[sectionId].classList.remove('hidden');
+
+                // Update button styles
+                for (const key in buttons) {
+                    buttons[key].classList.remove('bg-blue-500', 'text-white');
+                    buttons[key].classList.add('bg-gray-200', 'text-gray-800');
+                }
+                // Set active button style
+                const activeBtnId = `btn${sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}`;
+                if (buttons[activeBtnId]) {
+                    buttons[activeBtnId].classList.remove('bg-gray-200', 'text-gray-800');
+                    buttons[activeBtnId].classList.add('bg-blue-500', 'text-white');
+                }
+            }
+
+            // Add event listeners to buttons
+            buttons.btnComunicacao.addEventListener('click', () => showSection('comunicacao'));
+            buttons.btnCalculo.addEventListener('click', () => showSection('calculo'));
+            buttons.btnLogica.addEventListener('click', () => showSection('logica'));
+
+            // Show 'Comunicação e Expressão' by default on load
+            showSection('comunicacao');
+        });
+    </script>
 </body>
 </html>
